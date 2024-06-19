@@ -1,6 +1,14 @@
+import { motion } from 'framer-motion';
+
 const FlipLink = ({ children, href }: { children: string; href: string }) => {
   return (
-    <a className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl" href={href}>{children}</a>
+    <motion.a
+      initial={{ y: 0 }}
+      whileHover={{ y: 20 }}
+      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
+      href={href}>
+      {children}
+    </motion.a>
   )
 }
 const RevealLinks = () => {
