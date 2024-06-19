@@ -7,14 +7,27 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
       whileHover="hovered"
       className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
       href={href}>
-      <motion.div variants={{
-        initial: {
-          y: 0
-        },
-        hovered: {
-          y: 20
-        },
-      }}>
+      <motion.div
+        variants={{
+          initial: {
+            y: 0
+          },
+          hovered: {
+            y: "-100%"
+          },
+        }}>
+        {children}
+      </motion.div>
+      <motion.div
+        className='absolute inset-0'
+        variants={{
+          initial: {
+            y: "100%"
+          },
+          hovered: {
+            y: 0
+          },
+        }}>
         {children}
       </motion.div>
     </motion.a>
