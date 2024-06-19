@@ -3,11 +3,20 @@ import { motion } from 'framer-motion';
 const FlipLink = ({ children, href }: { children: string; href: string }) => {
   return (
     <motion.a
-      initial={{ y: 0 }}
-      whileHover={{ y: 20 }}
+      initial="initial"
+      whileHover="hovered"
       className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
       href={href}>
-      {children}
+      <motion.div variants={{
+        initial: {
+          y: 0
+        },
+        hovered: {
+          y: 20
+        },
+      }}>
+        {children}
+      </motion.div>
     </motion.a>
   )
 }
