@@ -1,9 +1,10 @@
 import './App.css'
-
+import RevealLinks from './components/links/RevealLinks'
 function App() {
   return (
-    <div className='text-3xl'>Hello World!</div>
+    <RevealLinks />
   )
 }
+
 
 export default App
