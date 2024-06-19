@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 
+const DURATION = 0.25;
+const STAGGER = 0.025;
+
 const FlipLink = ({ children, href }: { children: string; href: string }) => {
   return (
     <motion.a
@@ -20,7 +23,9 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
             }}
             key={index}
             transition={{
-              delay: 0.2 * index
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * index
             }}
             className='inline-block'
           >
@@ -41,7 +46,9 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
                 },
               }}
               transition={{
-                delay: 0.2 * index
+                duration: DURATION,
+                ease: "easeInOut",
+                delay: STAGGER * index
               }}
               key={index}
               className='inline-block'
