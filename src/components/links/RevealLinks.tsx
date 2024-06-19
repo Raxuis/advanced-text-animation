@@ -5,9 +5,6 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
     <motion.a
       initial="initial"
       whileHover="hovered"
-      transition={{
-        staggerChildren: 0.2
-      }}
       className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
       href={href}>
       <div>{children.split("").map((letter, index) => {
@@ -22,6 +19,9 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
               },
             }}
             key={index}
+            transition={{
+              delay: 0.2 * index
+            }}
             className='inline-block'
           >
             {letter}
@@ -39,6 +39,9 @@ const FlipLink = ({ children, href }: { children: string; href: string }) => {
                 hovered: {
                   y: 0
                 },
+              }}
+              transition={{
+                delay: 0.2 * index
               }}
               key={index}
               className='inline-block'
